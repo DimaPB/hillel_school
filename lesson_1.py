@@ -45,3 +45,14 @@ Num2 = (input("Введіть друге число: "))
 
 print(int(Num1)+int(Num2))
 print(Num1+Num2)
+
+# # 6 Вік користувача:
+# # Запитати у користувача його рік народження, ім'я та який зараз рік (три змінні)
+# # та вивести на екран два прінти: ім'я та скільки років користувачу.
+
+Name = input("Enter your name: ")
+Current_year = int(input("Enter current year: "))
+Birthday_year = int(input("Enter your birth year: "))
+age = Current_year - Birthday_year
+
+print(Name, str(age) + " Years old")
