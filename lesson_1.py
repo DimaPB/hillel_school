@@ -138,11 +138,14 @@ print("Final price is: ", cost_for_all)
 # користувач ввів:1441
 # користувач отримує: 0, 1
 
+time = 0
 time_in_minutes = int(input("Enter minutes: "))
 # hours = time_in_minutes <= 24, time_in_minutes // 60 or time_in_minutes > 24, time_in_minutes - time_in_minutes
-hours = (time_in_minutes // 60), (time_in_minutes % 60)
+hours = time_in_minutes // 60
+minutes = time_in_minutes % 60
 
-print(hours)
+time = hours // 1440 == 0
+print(time)
 
 
 # 13 Журавлики
@@ -162,3 +165,17 @@ print (Piter, Sergio, Kate)
 # new coment
 
 
+# 14 Податки
+# Прийшов час податків і вам треба написати програму що б допомогти відділу бугалтерії
+# програма приймає від користувача його зарплату за 3 місяці та відсоток який він має сплатити.
+# Виведіть на екран скільки треба сплатити податків за 3 місяці. Не забудьте ЄСВ(4422)
+
+
+salary = float(input("Enter your salary: "))
+salary = salary * 3
+
+tax = 5 / 100
+taxes = tax * salary
+
+taxes_to_pay = taxes + 4422
+print(taxes_to_pay)
