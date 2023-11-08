@@ -42,5 +42,3 @@ else:
     answer = num_1 + num_2
     answer = int(answer)*3
 print(answer)
-
-#### 3 

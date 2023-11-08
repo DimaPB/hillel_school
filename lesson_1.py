@@ -142,11 +142,13 @@ print("Final price is: ", cost_for_all)
 time = 0
 time_in_minutes = int(input("Enter minutes: "))
 # hours = time_in_minutes <= 24, time_in_minutes // 60 or time_in_minutes > 24, time_in_minutes - time_in_minutes
-hours = time_in_minutes // 60
-minutes = time_in_minutes % 60
+# hours = time_in_minutes // 60
+# minutes = time_in_minutes % 60
+#
+# hours = hours % 24
+hours = time_in_minutes // 1440
 
-hours = hours % 24
-print(hours, minutes)
+print(hours)
 
 
 # 13 Журавлики
@@ -158,12 +160,11 @@ print(hours, minutes)
 
 all_amount = int(input("Enter the amount of cranes: "))
 
-Kate = Piter = Sergio = all_amount
-Piter = Sergio = float(all_amount/6)
-Kate = float((4*all_amount)/6)
 
-print (Piter, Sergio, Kate)
-# new coment
+Piter = Sergio = all_amount//6
+Kate = (4*all_amount)//6
+print(Piter, Sergio, Kate)
+print(Piter, Sergio, Kate)
 
 
 # 14 Податки
@@ -180,3 +181,6 @@ taxes = tax * salary
 
 taxes_to_pay = taxes + 4422
 print(taxes_to_pay)
+
+
+
