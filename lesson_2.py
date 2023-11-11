@@ -72,11 +72,10 @@
 # print(c)
 
 #
-a = int(input("Enter a: "))  # 1
-x_1 = input("Enter first x: ")
-b = int(input("Enter b: "))  # -3
-x_2 = input("Enter second x: ")
-c = int(input("Enter c: "))  # -4
+equation = input("Enter the equation: ")
+a = int(input("Enter root 1: "))  # 1
+b = int(input("Enter root 2: "))  # -3
+c = float(input("Enter root 3: "))  # -4
 #
 d = b**2-4*a*c
 if d > 0:
@@ -91,4 +90,3 @@ else:
     print("Коренів немає")
 
 # # d_1 = 3 + (9 + 16)**(1/2)
-#
