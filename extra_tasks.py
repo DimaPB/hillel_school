@@ -6,16 +6,20 @@
 # яке складається з 4-х цифр, де кожна цифра може бути від 0 до 9 включно.
 # Ваше рішення має це враховувати! Якщо користувач ввів щось не те повідомте йому.
 #
-number = input("Enter the number: ")
+number = input("Enter the number like this (1234): ")
 num_list = list(number)
-
-dalatebale_item = num_list.pop(-1)
-new_list = dalatebale_item
-dalatebale_item = num_list.pop(-1)
-new_list = new_list + dalatebale_item
-dalatebale_item = num_list.pop(-1)
-new_list = new_list + dalatebale_item
-dalatebale_item = num_list.pop(-1)
-new_list = new_list + dalatebale_item
-print(new_list)
+if number.isalpha():
+    print("Wrong value")
+if len(number) > 4:
+    print("Number is too big")
+else:
+    dalatebale_item = num_list.pop(-1)
+    new_list = dalatebale_item
+    dalatebale_item = num_list.pop(-1)
+    new_list = new_list + dalatebale_item
+    dalatebale_item = num_list.pop(-1)
+    new_list = new_list + dalatebale_item
+    dalatebale_item = num_list.pop(-1)
+    new_list = new_list + dalatebale_item
+    print(new_list)
 
