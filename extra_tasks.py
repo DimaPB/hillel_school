@@ -5,8 +5,13 @@
 # Користувач може ввести будь-яке 4 значне ціле число. Будь-яке 4-х значне число - це число,
 # яке складається з 4-х цифр, де кожна цифра може бути від 0 до 9 включно.
 # Ваше рішення має це враховувати! Якщо користувач ввів щось не те повідомте йому.
+#
+number = input("Enter the number: ")
+num_list = list(number)
 
-number = (input("Enter the number: "))
-number = number.split(" ")
-print(number)
-#felkfmwek
+new_list = num_list.pop(-1)
+print(new_list, num_list)
+new_list = num_list.pop(-1)
+print(new_list, num_list)
+new_list = num_list.pop(-1)
+print(new_list, num_list)
