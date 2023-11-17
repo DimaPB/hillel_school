@@ -15,7 +15,7 @@ price = price.split()
 the_sum = 0
 for i in price:
     the_sum = the_sum + int(i)
-    # i += i не понимаю почему тут с і ничего не надо делать, оно само берет следущее значение в массиве
+    # i += 1 не понимаю почему тут с і ничего не надо делать, оно само берет следущее значение в массиве
 the_sum = the_sum * (1 - 6.5/100)
 discount = input("Do you have an discount? ").lower()
 if discount == "yes":
@@ -37,7 +37,27 @@ else:
 
 # Задача 2
 # Переробіть задачу з попереднього уроку враховуючи ваші знання з цього уроку, використайте цикл for in.
-#
+
+print("Enter the list of products using , to separate the products")
+product_list = input("Enter the list of products:")
+product_list = product_list.replace(" ", "")
+product_list = product_list.split(",")
+
+print(product_list)
+i = 1
+while i <= 5:
+    element_to_delete = int(input("Enter the number of product, you want to delete: ")) - 1
+    product_list.pop(element_to_delete)
+    print(product_list, "\n")
+    i += 1
+print("Enter the list of products using , to separate the products")
+new_product_list = input("Enter the list of products:")
+new_product_list = new_product_list.replace(" ", "")
+new_product_list = product_list + new_product_list.split(",")
+print(f"Your list {new_product_list}")
+
+# apple,juice,rice,tofu,chips,cola
+
 # Задача  3
 # Напишіть програму Банкомат. Втсановіть пін код для користувача(зробимо це константою).
 # Запитайте в користувача Пін якщо він введе три рази не вірно то напишіть що карта заблокована.
@@ -56,7 +76,6 @@ while i < 3:
         continue
     else:
         print("Your card is blocked")
-
 #
 # Задача 4
 # Напишіть за допомогою f-string та format. Дві стрічки де буде підставлятись імя та вік з зміних
@@ -67,3 +86,8 @@ while i < 3:
 # print(f_string)
 # print(format_string)
 
+name = "оЛенА"
+age = 21
+
+print(f"Я {name.capitalize()}, мені {age} рік")
+print("""Я {0}, мені {1} рік""".format(name.capitalize(), age))
