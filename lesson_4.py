@@ -17,7 +17,7 @@ for i in price:
     the_sum = the_sum + int(i)
     # i += 1 не понимаю почему тут с і ничего не надо делать, оно само берет следущее значение в массиве
 the_sum = the_sum * (1 - 6.5/100)
-discount = input("Do you have an discount? ").lower()
+discount = input("Do you have an discount? (yes/no): ").lower()
 if discount == "yes":
     type_of_discount = input("Which one do ypu have? sum or %? ").lower()
     if type_of_discount == "sum":
@@ -30,7 +30,7 @@ if discount == "yes":
         print("Incorrect type of discount")
 rounded_sum = the_sum.__round__(0)
 if the_sum - rounded_sum >= 0.44:
-    the_sum =+ 1
+    the_sum += 1
     print(f"The sum is {the_sum.__round__(0)}")
 else:
     print(f"The sum is {the_sum.__round__(0)}")
