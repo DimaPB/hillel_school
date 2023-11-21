@@ -14,3 +14,4 @@ for i in range(2, 10):
 operation = input("Select the operation: ")
 print(table[operation])
 
+
