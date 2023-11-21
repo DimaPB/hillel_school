@@ -13,5 +13,3 @@ for i in range(2, 10):
         table["/"].append(f"{i}/{j}={round(i/j, 2)}")
 operation = input("Select the operation: ")
 print(table[operation])
-
-
