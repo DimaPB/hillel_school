@@ -5,19 +5,19 @@
 # (додавання, віднімання, множення, ділення). і виведіть йому цю табличку.
 
 
-# def return_table(operator: str):
-#     table = {"+": [], "-": [], "*": [], "/": []}
-#     for i in range(2, 10):
-#         for j in range(2, 10):
-#             table["+"].append(f"{i}+{j}={i+j}")
-#             table["-"].append(f"{i}-{j}={i-j}")
-#             table["*"].append(f"{i}*{j}={i*j}")
-#             table["/"].append(f"{i}/{j}={round(i/j, 2)}")
-#
-#     return print(table[operator])
-#
-#
-# return_table(operator=input("Select the operation: "))
+def return_table(operator: str):
+    table = {"+": [], "-": [], "*": [], "/": []}
+    for i in range(2, 10):
+        for j in range(2, 10):
+            table["+"].append(f"{i}+{j}={i+j}")
+            table["-"].append(f"{i}-{j}={i-j}")
+            table["*"].append(f"{i}*{j}={i*j}")
+            table["/"].append(f"{i}/{j}={round(i/j, 2)}")
+
+    print((table[operator]))
+
+
+return_table(operator=input("Select the operation: "))
 
 
 # Задача 1
@@ -29,29 +29,66 @@
 # * завдання з зірочкою не впливає на бал. Округліть суму якщо копійок більше ніж 44 то це буде + 1 гривня,
 # якщо менше. то тоді просто відкидаємо копійки від ціни.
 
+def return_price():
+    prices = input("Enter the prices using spaces between them: ")
+    return prices
 
-print("Enter the prices using spaces between them")
-price = input("Enter the prices: ")
-price = price.split()
 
-the_sum = 0
-for i in price:
-    the_sum = the_sum + int(i)
-the_sum = the_sum * (1 - 6.5/100)
-discount = input("Do you have an discount? (yes/no): ").lower()
-if discount == "yes":
-    type_of_discount = input("Which one do ypu have? sum or %? ").lower()
-    if type_of_discount == "sum":
-        discount_amount = int(input("Enter your discount "))
-        the_sum = the_sum - discount_amount
-    elif type_of_discount == "%":
-        discount_amount = float(input("Enter your discount "))
-        the_sum = the_sum * (1 - discount_amount/100)
+def return_having():
+    discount = input("Do you have an discount? (yes/no): ").lower()
+    return discount
+
+
+def discount_type():
+    disc_type = input("Which one do ypu have? sum or %? ").lower()
+    return disc_type
+
+
+def discount_amount(type_of_discount, price):
+    if type_of_discount == "sum" or type_of_discount == "%":
+        amount = int(input("Enter your discount: "))
+        if type_of_discount == "sum":
+            result = price - amount
+            print(round(result, 2))
+            return result
+        else:
+            result = price * (1 - amount/100)
+            print(round(result, 2))
+            return result
     else:
         print("Incorrect type of discount")
-rounded_sum = the_sum.__round__(0)
-if the_sum - rounded_sum >= 0.44:
-    the_sum += 1
-    print(f"The sum is {the_sum.__round__(0)}")
-else:
-    print(f"The sum is {the_sum.__round__(0)}")
+
+
+def rounding(resultat):
+    rounded_sum = round(resultat, 0)
+    if resultat - rounded_sum >= 0.44:
+        resultat += 1
+        print(f"The sum is {round(resultat, 0)}")
+        return resultat
+    else:
+        print(f"The sum is {round(resultat, 0)}")
+        return resultat
+
+
+def tax_price(price):
+    prices_list = price.split()
+    the_sum = float(0)
+    for i in prices_list:
+        the_sum = the_sum + int(i)
+    the_sum = the_sum * (1 - 6.5/100)
+    return the_sum
+
+
+def final_result():
+    next_price = return_price()
+    first_price = tax_price(next_price)
+    is_discount = return_having()
+    if is_discount == "yes":
+        disc_type = discount_type()
+        resultat = discount_amount(disc_type, first_price)
+        rounding(resultat)
+    else:
+        print(first_price)
+
+
+final_result()

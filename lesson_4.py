@@ -15,7 +15,6 @@ price = price.split()
 the_sum = 0
 for i in price:
     the_sum = the_sum + int(i)
-    # i += 1 не понимаю почему тут с і ничего не надо делать, оно само берет следущее значение в массиве
 the_sum = the_sum * (1 - 6.5/100)
 discount = input("Do you have an discount? (yes/no): ").lower()
 if discount == "yes":
