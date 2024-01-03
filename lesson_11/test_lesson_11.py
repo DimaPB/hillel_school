@@ -4,3 +4,31 @@
 #  додайте скірншоти виконання(не забудьте додавати -v, що б я бачив що ви проганяли)
 #  і біля скріншотів пропишіть команди які ви використовували.
 #
+
+import time
+import pytest
+
+
+def test_1():
+    assert True
+    time.sleep(2)
+
+
+def test_2():
+    assert True
+    time.sleep(2)
+
+
+def test_3():
+    assert True
+    time.sleep(2)
+
+
+def test_4():
+    assert True
+    time.sleep(2)
+
+
+def test_5():
+    assert True
+    time.sleep(2)
