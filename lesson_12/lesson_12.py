@@ -1,2 +1,2 @@
-word = "Python"
-print(word[-4:])
+dict = {"icon": "pop", "result":[{"spot":"exist"}]}
+print(dict)
