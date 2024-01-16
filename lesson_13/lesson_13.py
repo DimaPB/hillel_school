@@ -16,3 +16,30 @@
 # І написати свою логіку яку ви хочте.
 #
 # Створіть два обьєта класа в якому ви це реалізували і зробіть перевірку що все працює
+
+# class Chort:
+#     def __init__(self, name):
+#         if name == "Volodia":
+#             print(f"{name} в натуре чорт")
+#         else:
+#             print(f"{name} мій пацан")
+#
+#
+# Name = Chort("Dimon")
+
+class TheSquare:
+
+    def __init__(self, number, number_rate):
+        self.number = number
+        self.number_rate = number_rate
+
+    def __gt__(self, other):
+        result = self.number ** self.number_rate
+        print(result)
+        return result
+
+
+number_one = TheSquare(3, 3)
+number_two = TheSquare(3, 3)
+
+print(number_one != number_two)
