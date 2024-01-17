@@ -27,19 +27,17 @@
 #
 # Name = Chort("Dimon")
 
-class TheSquare:
+class TheDegree:
 
-    def __init__(self, number, number_rate):
+    def __init__(self, number, degree):
         self.number = number
-        self.number_rate = number_rate
+        self.degree = degree
 
     def __gt__(self, other):
-        result = self.number ** self.number_rate
-        print(result)
-        return result
+        print(self.number ** self.degree, other.number ** other.degree)
+        return self.number ** self.degree > other.number ** other.degree
 
 
-number_one = TheSquare(3, 3)
-number_two = TheSquare(3, 3)
-
-print(number_one != number_two)
+number_one = TheDegree(2, 6)
+number_two = TheDegree(3, 4)
+print(number_one > number_two)
