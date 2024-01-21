@@ -13,3 +13,21 @@
 
 number = [i for i in range(34, 121) if i % 2 == 0 and i % 3 == 0]
 print(number)
+
+
+class Calculator:
+    def adding(self, a, b):
+        return a + b
+
+    def subtraction(self, a, b):
+        return a - b
+
+    def multiplying(self, a, b):
+        return a * b
+
+    def division(self, a, b):
+        return a / b
+
+    @staticmethod
+    def message():
+        print("Привіт я калькулятор")
