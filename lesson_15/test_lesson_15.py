@@ -1,6 +1,6 @@
-import pytest
 import datetime
 import time
+import pytest
 from lesson_15 import Calculator
 
 
@@ -10,6 +10,13 @@ class TestCalculator:
     def setup_class(cls):
         current_datetime = datetime.datetime.now()
         message = "Test started at {}".format(current_datetime)
+        with open("test_logs.txt", 'a') as file:
+            file.write("{}\n".format(message))
+
+    @classmethod
+    def teardown_class(cls):
+        current_datetime = datetime.datetime.now()
+        message = "Test finished at {}".format(current_datetime)
         with open("test_logs.txt", 'a') as file:
             file.write("{}\n".format(message))
 
@@ -27,9 +34,4 @@ class TestCalculator:
         assert testo.division(a, b) == result
         time.sleep(1)
 
-    @classmethod
-    def teardown_class(cls):
-        current_datetime = datetime.datetime.now()
-        message = "Test finished at {}".format(current_datetime)
-        with open("test_logs.txt", 'a') as file:
-            file.write("{}\n".format(message))
+
