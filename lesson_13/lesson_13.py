@@ -38,6 +38,6 @@ class TheDegree:
         return self.number ** self.degree > other.number ** other.degree
 
 
-number_one = TheDegree(2, 6)
-number_two = TheDegree(3, 4)
+number_one = TheDegree(2, 11)
+number_two = TheDegree(3, 7)
 print(number_one > number_two)
