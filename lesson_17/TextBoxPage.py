@@ -1,5 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webdriver import WebDriver
+from selenium.webdriver.remote.webelement import WebElement
+
 
 class TextBoxPage:
     def __init__(self, driver: WebDriver):
@@ -8,9 +10,15 @@ class TextBoxPage:
         self.full_name_field = (By.ID, "userName")
         # self.full_name_field = (By.XPATH, "//input[@id='userName']")  # дублювання доступу до поля юзер нейм, але через xPAXTH
         self.full_email_field = (By.ID, "userEmail")
-        self.full_current_text_area_field = (By.ID, "currentAddress")
+        self.full_current_text_area_field = (By.CSS_SELECTOR, "textarea#currentAddress")
         self.full_permanent_text_area_field = (By.CSS_SELECTOR, "textarea#permanentAddress")  # для різноманіття, можна було по айті як попереднє
         self.submit_btn = (By.ID, "submit")
+
+        self.result_fullname = (By.ID, "name")
+        self.result_email = (By.ID, "email")
+        self.result_curr_addr = (By.CSS_SELECTOR, "p#currentAddress")
+        self.result_perm_addr = (By.CSS_SELECTOR, "p#permanentAddress")
+
 
     def open(self) -> "TextBoxPage":
         self.driver.get(self.url)
@@ -22,8 +30,6 @@ class TextBoxPage:
     def fill_full_name_field(self, text: str) -> None:
         self.driver.find_element(*self.full_name_field).send_keys(text)
 
-    # todo реалізувати(метод clear and fill) для полів Email, Current Address, Permanent Address
-    # Залити на окрему бранчу на гітхабі назва довільна(по можливості).
+    def clear_email_field(self) ->None:
+        self.driver.find_element(*self.full_email_field).clear()
 
-    def click_submit(self) -> None:
-        self.driver.find_element(*self.submit_btn).click()
