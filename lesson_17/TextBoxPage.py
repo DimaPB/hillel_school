@@ -45,5 +45,3 @@ class TextBoxPage:
 
     def fill_permanent_area_field(self, text: str) -> None:
         self.driver.find_element(*self.full_permanent_area_field).send_keys(text)
-
-
