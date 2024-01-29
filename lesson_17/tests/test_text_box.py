@@ -16,3 +16,4 @@ class TestTextBox:
         page = TextBoxPage(chrome)
         page.open()
         page.fill_current_area_field("Baker Street 221b")
+
