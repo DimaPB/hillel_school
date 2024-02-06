@@ -11,6 +11,4 @@ class TestElementsPage:
         page = ElementsPage(chrome)
         page.open()
         elements = page.get_elements_page_categories()
-        for i in elements:
-            return i
-        assert elements == element_name
+        assert element_name in elements
