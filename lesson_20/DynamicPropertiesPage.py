@@ -15,7 +15,7 @@ class PageDynamicProperties:
         return self
 
     def button_invisible_visible(self):
-        button = self.driver.find_element(By.ID ,self.invisible_visible_button)
+        button = self.driver.find_element(By.ID, self.invisible_visible_button)
         return button
 
     def button_disable_enable(self) -> WebElement:
